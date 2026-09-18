@@ -1,0 +1,571 @@
+1. Pure React 
+// Page.tsx
+export default function Page() {
+  return (
+    <main>
+      <h1>RO Water Purifier in Pune</h1>
+      <p>
+        Buy the best RO Water Purifier in Pune from SGSRO.
+      </p>
+    </main>
+  );
+}
+
+
+// prerender.ts
+import { renderToString } from "react-dom/server";
+import { writeFileSync, mkdirSync } from "node:fs";
+import Page from "./Page";
+
+const html = renderToString(<Page />);
+
+const document = `
+<!doctype html>
+<html>
+<head>
+  <title>RO Water Purifier in Pune | SGSRO</title>
+  <meta
+    name="description"
+    content="Buy the best RO Water Purifier in Pune from SGSRO."
+  />
+</head>
+<body>
+  <div id="root">${html}</div>
+</body>
+</html>
+`;
+
+mkdirSync("dist/ro-water-purifier-in-pune", {
+  recursive: true,
+});
+
+writeFileSync(
+  "dist/ro-water-purifier-in-pune/index.html",
+  document
+);
+
+*****************************************************************************
+
+2. React + Vite
+import { Head } from "vite-react-ssg";
+
+export default function Page() {
+  return (
+    <>
+      <Head>
+        <title>RO Water Purifier in Pune | SGSRO</title>
+
+        <meta
+          name="description"
+          content="Buy the best RO Water Purifier in Pune from SGSRO."
+        />
+
+        <link
+          rel="canonical"
+          href="https://sgsro.com/ro-water-purifier-in-pune"
+        />
+
+        <meta
+          property="og:title"
+          content="RO Water Purifier in Pune | SGSRO"
+        />
+
+        <meta
+          property="og:description"
+          content="Buy the best RO Water Purifier in Pune from SGSRO."
+        />
+      </Head>
+
+      <main>
+        <h1>RO Water Purifier in Pune</h1>
+      </main>
+    </>
+  );
+}
+
+
+**********************************************************************************
+
+3. Vue + Vite
+<script setup>
+import { useHead } from "@unhead/vue";
+
+useHead({
+  title: "RO Water Purifier in Pune | SGSRO",
+
+  meta: [
+    {
+      name: "description",
+      content:
+        "Buy the best RO Water Purifier in Pune from SGSRO.",
+    },
+    {
+      property: "og:title",
+      content: "RO Water Purifier in Pune | SGSRO",
+    },
+    {
+      property: "og:description",
+      content:
+        "Buy the best RO Water Purifier in Pune from SGSRO.",
+    },
+  ],
+});
+</script>
+
+<template>
+  <main>
+    <h1>RO Water Purifier in Pune</h1>
+  </main>
+</template>
+
+{
+  "scripts": {
+    "build": "vite-ssg build"
+  }
+}
+
+
+*******************************************************************************************
+
+4. Next.js
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "RO Water Purifier in Pune | SGSRO",
+  description:
+    "Buy the best RO Water Purifier in Pune from SGSRO.",
+};
+
+export default function Page() {
+  return (
+    <main>
+      <h1>RO Water Purifier in Pune</h1>
+    </main>
+  );
+}
+
+For your dynamic pages:
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+
+  const page = await getPage(slug);
+
+  return {
+    title: page.metaTitle,
+    description: page.metaDescription,
+    keywords: page.metaKeywords,
+    openGraph: {
+      title: page.metaTitle,
+      description: page.metaDescription,
+      images: [page.img],
+    },
+  };
+}
+
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+
+  const page = await getPage(slug);
+
+  return (
+    <main>
+      <h1>{page.h1}</h1>
+    </main>
+  );
+}
+
+
+*******************************************************************************************
+
+
+5. Gatsby 
+import type { HeadFC, PageProps } from "gatsby";
+
+const Page: React.FC<PageProps> = () => {
+  return (
+    <main>
+      <h1>RO Water Purifier in Pune</h1>
+
+      <p>
+        Buy the best RO Water Purifier in Pune from SGSRO.
+      </p>
+    </main>
+  );
+};
+
+export default Page;
+
+export const Head: HeadFC = () => (
+  <>
+    <title>RO Water Purifier in Pune | SGSRO</title>
+
+    <meta
+      name="description"
+      content="Buy the best RO Water Purifier in Pune from SGSRO."
+    />
+
+    <meta
+      property="og:title"
+      content="RO Water Purifier in Pune | SGSRO"
+    />
+
+    <meta
+      property="og:description"
+      content="Buy the best RO Water Purifier in Pune from SGSRO."
+    />
+  </>
+);
+
+
+*******************************************************************************************
+
+6. Svelte → SvelteKit
+
+<script>
+  import { page } from '$app/state';
+
+  const title = 'RO Water Purifier in Pune | SGSRO';
+  const description =
+    'Buy the best RO Water Purifier in Pune from SGSRO.';
+</script>
+
+<svelte:head>
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+</svelte:head>
+
+<h1>RO Water Purifier in Pune</h1>
+// +layout.js
+export const prerender = true;
+
+*******************************************************************************************
+
+7. Ember.js
+// route
+export default class ProductRoute extends Route {
+  async model() {
+    return {
+      title: "RO Water Purifier in Pune",
+      description: "Buy the best RO Water Purifier in Pune from SGSRO."
+    };
+  }
+}
+
+
+
+
+Technology	What it is	Best for	SSG	SSR	Full-stack	Mobile
+React	UI library	Flexible web apps	❌ Built-in	❌ Built-in	❌	React Native
+React + Vite	React app tooling	SPAs, dashboards, business apps	Via SSG tool	Via custom setup	❌	❌
+React + Next.js	Full React framework	Websites + web apps	✅	✅	✅	❌
+React + Gatsby	React framework	Content/static sites	✅	✅	Limited	❌
+Vue + Vite	Vue app tooling	SPAs, dashboards	Via vite-ssg	Custom	❌	❌
+Nuxt	Vue framework	Full Vue websites/apps	✅	✅	✅	❌
+Svelte	UI framework/compiler	Lightweight web apps	❌ by itself	❌ by itself	❌	❌
+SvelteKit	Svelte framework	Full web apps/sites	✅	✅	✅	❌
+Angular	Full frontend framework	Enterprise applications	Limited/custom	Limited/custom	❌	❌
+Ember	Full frontend framework	Large/long-lived web apps	Via FastBoot/etc.	✅	❌	❌
+Backbone.js	Lightweight JS framework	Legacy/simple apps	❌	❌	❌	❌
+React Native	Mobile UI framework	Android/iOS apps	Not relevant	Not relevant	❌	✅
+
+
+
+
+
+2. React
+React is primarily a UI library.
+React is good for
+•	Dashboards
+•	Admin panels
+•	SaaS applications
+•	Interactive applications
+•	E-commerce frontends
+•	Internal business applications
+•	Complex component-based UIs
+But React alone doesn't decide:
+•	routing
+•	SSG
+•	SSR
+•	backend
+•	database
+•	deployment
+You add other tools.
+
+
+
+3. React + Vite
+
+
+It gives you:
+•	Very fast development server
+•	Fast HMR
+•	Production bundling
+•	Modern JavaScript/TypeScript tooling
+This is excellent for:
+•	SPA
+•	Dashboard
+•	Admin system
+•	SaaS frontend
+•	Internal applications
+•	E-commerce applications
+•	Interactive web applications
+
+4. Next.js
+So if you're starting a new application and want everything integrated, Next.js is a very strong choice.
+Best for
+•	Large websites
+•	E-commerce
+•	SaaS
+•	Marketing websites
+•	Blogs
+•	Web applications
+•	Applications needing server-side functionality
+•	Applications needing SSG + SSR together
+•	Next.js
+•	├── React
+•	├── Routing
+•	├── SSG
+•	├── SSR
+•	├── Server Components
+•	├── API/server functionality
+•	├── Metadata
+•	├── Caching
+•	└── Deployment features
+So if you're starting a new application and want everything integrated, Next.js is a very strong choice.
+•	Best for
+•	Large websites
+•	E-commerce
+•	SaaS
+•	Marketing websites
+•	Blogs
+•	Web applications
+•	Applications needing server-side functionality
+•	Applications needing SSG + SSR together
+•	Full stack
+
+5. Gatsby
+
+Gatsby is also React-based, but its philosophy historically focused heavily on static/content sites. Gatsby now supports SSG, DSG and SSR on a per-page basis
+Good for:
+•	Documentation
+•	Blogs
+•	Content websites
+•	Marketing sites
+•	Static websites
+•	Sites consuming CMS/API data
+•	CMS
+•	 ↓
+•	Gatsby
+•	 ↓
+•	Build
+•	 ↓
+•	HTML/CSS/JS
+•	 ↓
+•	CDN
+
+Gatsby's SSG output can be served as static assets, while DSG can defer generation and SSR can render at request time. 
+
+For a brand-new general-purpose React application, however, I'd usually choose Next.js or React + Vite before Gatsby.
+
+
+6. Vue + Vite
+Excellent for:
+•	SPAs
+•	Dashboards
+•	Admin applications
+•	SaaS frontends
+•	E-commerce
+•	Interactive applications
+If you need Vue SSG, vite-ssg is the corresponding tool. Its documentation explicitly describes it as static-site generation for Vue 3 on Vite.
+Vue + Vite
+     ↓
+vite-ssg
+     ↓
+SSG
+
+7. Nuxt
+Nuxt is basically the full framework around Vue, similar conceptually to Next.js around React.
+
+Vue
+ ↓
+Nuxt
+ ↓
+Full web framework
+
+Good for:
+Excellent for:
+•	SPAs
+•	Dashboards
+•	Admin applications
+•	SaaS frontends
+•	E-commerce
+•	Interactive applications
+•	Large Vue websites
+•	E-commerce
+•	SaaS
+•	SSR
+•	SSG
+•	Full-stack Vue applications
+•	SEO-heavy sites
+If you're choosing Vue for a serious application, Nuxt is often the framework to consider when you need server rendering/static generation and more integrated features.
+
+
+8. Svelte
+
+Svelte is a frontend framework/compiler.
+Svelte
+ ↓
+Web UI
+It's known for compiling components into efficient JavaScript rather than relying on the same runtime model as React/Vue.
+Good for:
+•	Interactive websites
+•	Lightweight applications
+•	Smaller bundles
+•	Component-based applications
+But for a complete application, you normally look at:
+Svelte
+ ↓
+SvelteKit
+
+
+9. SvelteKit
+
+SvelteKit is the complete Svelte application framework.
+It gives you concepts such as:
+SvelteKit
+├── Routing
+├── SSG/prerendering
+├── SSR
+├── Data loading
+├── Server endpoints
+└── Deployment adapters
+10. Angular
+Angular is different from React.
+Angular is much more of a complete frontend framework.
+It includes a lot of things out of the box:
+•	Components
+•	Routing
+•	Dependency injection
+•	Forms
+•	HTTP client
+•	Testing patterns
+•	State/service architecture
+•	TypeScript-first development
+It's particularly common in:
+•	Enterprise applications
+•	Large business systems
+•	Corporate applications
+•	Complex internal applications
+For example:
+Banking dashboard
+Enterprise CRM
+ERP
+Large internal application
+
+
+11. Ember.js
+Ember is also a more opinionated framework.
+It is designed around conventions:
+Ember
+ ↓
+Convention
+ ↓
+Structured application
+Good for:
+•	Large applications
+•	Long-lived applications
+•	Teams wanting strong conventions
+•	Existing Ember applications
+For server rendering, Ember uses FastBoot.
+I wouldn't normally choose Ember for a brand-new small marketing website.
+
+
+2. Backbone.js
+Backbone is much lighter and much older.
+It gives you basic pieces such as:
+Models
+Collections
+Views
+Router
+It doesn't provide the modern integrated application experience of Next.js, Nuxt, SvelteKit, etc.
+It's mostly useful today when:
+Existing old application
+        ↓
+Backbone.js
+        ↓
+Maintain/extend it
+For a new project:
+I would generally not choose Backbone.
+
+
+
+13. React Native
+React Native is for mobile applications.
+React Native
+      ↓
+Android
+iOS
+Example:
+import { View, Text, Button } from "react-native";
+
+export default function ProductScreen() {
+  return (
+    <View>
+      <Text>RO Water Purifier</Text>
+      <Button title="Buy Now" />
+    </View>
+  );
+}
+It's not a replacement for:
+React + Vite
+Next.js
+SvelteKit
+because those are primarily for web.
+React Native is for:
+•	Android
+•	iOS
+•	Mobile applications
+
+
+🏢 Enterprise application
+
+Angular, React + Vite
+
+💻 SaaS web application
+Next.js, React + Vite
+
+🌐 Static/content website
+Next.js, SvelteKit, Gatsby
+
+🛒 E-commerce
+Next.js, Nuxt
+
+📊 Admin/dashboard
+React + Vite
+
+📱 Mobile app
+React Native
+
+
+
+
+
+
+
+
+
+
+
+

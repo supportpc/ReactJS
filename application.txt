@@ -1,0 +1,6 @@
+
+
+1. package.json updated
+2. route access auth
+3. public access doc
+4. api changes

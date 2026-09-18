@@ -1,0 +1,57 @@
+
+const [drmSupported, setDrmSupported] = useState(null);
+
+useEffect(() => {
+    async function check() {
+        const supported = await isWidevineSupported();
+        setDrmSupported(supported);
+    }
+
+    check();
+}, []);
+
+
+
+async function isWidevineSupported() {
+    if (!navigator.requestMediaKeySystemAccess) {
+        return false;
+    }
+
+    try {
+        await navigator.requestMediaKeySystemAccess(
+            "com.widevine.alpha",
+            [
+                {
+                    initDataTypes: ["cenc"],
+                    videoCapabilities: [
+                        {
+                            contentType:
+                                'video/mp4; codecs="avc1.640028"',
+                            robustness: "HW_SECURE_ALL",
+                        },
+                    ],
+                },
+            ]
+        );
+
+        return true;
+    } catch {
+        return false;
+    }
+}
+
+
+if (drmSupported === null) {
+    return <p>Checking device support...</p>;
+}
+
+if (!drmSupported) {
+    return <p>This device/browser is not supported.</p>;
+}
+
+return (
+    <VideoPlayer
+        videoId={videoId}
+        user={session?.user}
+    />
+);

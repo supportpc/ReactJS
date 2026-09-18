@@ -1,0 +1,58 @@
+Core Data & Streams
+•	buffer: Handles raw binary data allocation and manipulation.
+•	stream: Abstract interface for handling streaming data sequentially.
+•	string_decoder: Decodes buffer binaries into clean, readable strings. [1]
+________________________________________
+Networking & Web
+•	http: Spins up web servers and handles HTTP protocol structures. [1]
+•	https: Implements TLS/SSL secure communication layers for web servers. [1]
+•	http2: Supports HTTP/2 core protocol framing and multiplexed connections. [1]
+•	net: Creates low-level, stream-based TCP/IPC servers and clients. [1]
+•	tls: Handles Transport Layer Security/Secure Socket Layer on top of net sockets.
+•	dns: Performs network name resolution and queries domain names. [1, 2]
+•	dgram: Provides implementation for UDP datagram socket networks.
+•	url: Parses, formats, and handles network address strings. [1, 2]
+•	querystring: Formats and parses URL query string parameters. [1, 2]
+________________________________________
+Operating System & Processes
+•	os: Retrieves host machine memory, CPU, and platform telemetry.
+•	process: Controls and exposes data about the current running application.
+•	child_process: Spawns sub-processes to execute terminal operations synchronously or asynchronously.
+•	cluster: Multi-threads workloads across duplicate sibling process workers.
+•	worker_threads: Runs parallel execution threads within a single main memory environment. [1, 2, 3]
+________________________________________
+File System & Storage
+•	fs: Interacts directly with local machine directories and files.
+•	path: Cleans up, resolves, and tracks directory address syntax across operating systems.
+•	sqlite: Embedded database client allowing native SQL execution. [1, 2, 3]
+________________________________________
+Encryption & Security
+•	crypto: Standard encryption, decryption, cipher, and secure hashing suite.
+•	zlib: Compresses or decompresses data blocks via Gzip or Deflate formats.
+•	tls: Establishes safe encrypted client/server socket environments. [1, 2]
+________________________________________
+Development, Utilities & Performance
+•	util: Provides debugging shortcuts, legacy converters, and string styling.
+•	perf_hooks: Logs execution performance telemetry and timetables.
+•	v8: Exposes specific internal structures and heap management options tied to Google’s engine.
+•	vm: Safely compiles and executes arbitrary code directly inside isolated contexts.
+•	diagnostics_channel: Creates dedicated pipeline lanes for tracking app telemetry and errors.
+•	async_hooks: Tracks async lifecycle metrics and continuous stack contexts. [1, 2]
+________________________________________
+Testing & Verification
+•	assert: Validates functional invariants via simple boolean checks.
+•	test: Native assertion wrapper to run structural testing frameworks smoothly. [1, 2, 3]
+________________________________________
+Interaction & CLI
+•	console: Simple logging utility writing to standard output channels.
+•	readline: Captures character streams input-by-input from user prompts.
+•	repl: Exposes raw execution loops for evaluating on-the-fly JavaScript code.
+•	tty: Deals with structural terminal environments and window sizing context. [1]
+________________________________________
+Module Architecture & Standards
+•	module: Exposes system-level caching, packaging, and resolution controls.
+•	events: Framework supporting publisher/subscriber pattern loops.
+•	wasi: Interacts natively with WebAssembly System Interfaces.
+•	timers: Manages operational queues like timeout clocks or recurring intervals.
+•	punycode: Encodes Unicode strings into pure ASCII domains (Deprecated).
+•	domain: Groups related asynchronous exceptions into single fault contexts
