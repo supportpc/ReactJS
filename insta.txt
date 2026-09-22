@@ -20,6 +20,26 @@ facebook > page > settings > Linked account
       ],
 
 
+ads_management (This forces Meta to issue a permanent expires_at: 0 token for graph actions)
+GET https://facebook.com{your-facebook-page-id}?fields=access_token&access_token={your-60-day-user-access-token}
+
+{
+  "access_token": "EAAb...", this is  expires_at: 0)
+  "id": "1776354465843202"
+}
+
+pages_show_list is use or get id by token 
+https://graph.facebook.com/v23.0/1776354465843202?fields=id,name&access_token=
+
+then use log life never token
+https://graph.facebook.com/v23.0/1776354465843202?fields=access_token&access_token={TOEKN}
+
+
+
+
+
+
+
 App ID:
 app scret:
 

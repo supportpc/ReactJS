@@ -5,7 +5,7 @@ export default function Page() {
     <main>
       <h1>RO Water Purifier in Pune</h1>
       <p>
-        Buy the best RO Water Purifier in Pune from SGSRO.
+        Buy the best RO Water Purifier in Pune from SSS.
       </p>
     </main>
   );
@@ -23,10 +23,10 @@ const document = `
 <!doctype html>
 <html>
 <head>
-  <title>RO Water Purifier in Pune | SGSRO</title>
+  <title>RO Water Purifier in Pune | SSS</title>
   <meta
     name="description"
-    content="Buy the best RO Water Purifier in Pune from SGSRO."
+    content="Buy the best RO Water Purifier in Pune from SSS."
   />
 </head>
 <body>
@@ -53,26 +53,26 @@ export default function Page() {
   return (
     <>
       <Head>
-        <title>RO Water Purifier in Pune | SGSRO</title>
+        <title>RO Water Purifier in Pune | SSS</title>
 
         <meta
           name="description"
-          content="Buy the best RO Water Purifier in Pune from SGSRO."
+          content="Buy the best RO Water Purifier in Pune from SSS."
         />
 
         <link
           rel="canonical"
-          href="https://sgsro.com/ro-water-purifier-in-pune"
+          href="https://SSS.com/ro-water-purifier-in-pune"
         />
 
         <meta
           property="og:title"
-          content="RO Water Purifier in Pune | SGSRO"
+          content="RO Water Purifier in Pune | SSS"
         />
 
         <meta
           property="og:description"
-          content="Buy the best RO Water Purifier in Pune from SGSRO."
+          content="Buy the best RO Water Purifier in Pune from SSS."
         />
       </Head>
 
@@ -91,22 +91,22 @@ export default function Page() {
 import { useHead } from "@unhead/vue";
 
 useHead({
-  title: "RO Water Purifier in Pune | SGSRO",
+  title: "RO Water Purifier in Pune | SSS",
 
   meta: [
     {
       name: "description",
       content:
-        "Buy the best RO Water Purifier in Pune from SGSRO.",
+        "Buy the best RO Water Purifier in Pune from SSS.",
     },
     {
       property: "og:title",
-      content: "RO Water Purifier in Pune | SGSRO",
+      content: "RO Water Purifier in Pune | SSS",
     },
     {
       property: "og:description",
       content:
-        "Buy the best RO Water Purifier in Pune from SGSRO.",
+        "Buy the best RO Water Purifier in Pune from SSS.",
     },
   ],
 });
@@ -131,9 +131,9 @@ useHead({
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "RO Water Purifier in Pune | SGSRO",
+  title: "RO Water Purifier in Pune | SSS",
   description:
-    "Buy the best RO Water Purifier in Pune from SGSRO.",
+    "Buy the best RO Water Purifier in Pune from SSS.",
 };
 
 export default function Page() {
@@ -197,7 +197,7 @@ const Page: React.FC<PageProps> = () => {
       <h1>RO Water Purifier in Pune</h1>
 
       <p>
-        Buy the best RO Water Purifier in Pune from SGSRO.
+        Buy the best RO Water Purifier in Pune from SSS.
       </p>
     </main>
   );
@@ -207,21 +207,21 @@ export default Page;
 
 export const Head: HeadFC = () => (
   <>
-    <title>RO Water Purifier in Pune | SGSRO</title>
+    <title>RO Water Purifier in Pune | SSS</title>
 
     <meta
       name="description"
-      content="Buy the best RO Water Purifier in Pune from SGSRO."
+      content="Buy the best RO Water Purifier in Pune from SSS."
     />
 
     <meta
       property="og:title"
-      content="RO Water Purifier in Pune | SGSRO"
+      content="RO Water Purifier in Pune | SSS"
     />
 
     <meta
       property="og:description"
-      content="Buy the best RO Water Purifier in Pune from SGSRO."
+      content="Buy the best RO Water Purifier in Pune from SSS."
     />
   </>
 );
@@ -234,9 +234,9 @@ export const Head: HeadFC = () => (
 <script>
   import { page } from '$app/state';
 
-  const title = 'RO Water Purifier in Pune | SGSRO';
+  const title = 'RO Water Purifier in Pune | SSS';
   const description =
-    'Buy the best RO Water Purifier in Pune from SGSRO.';
+    'Buy the best RO Water Purifier in Pune from SSS.';
 </script>
 
 <svelte:head>
@@ -258,7 +258,7 @@ export default class ProductRoute extends Route {
   async model() {
     return {
       title: "RO Water Purifier in Pune",
-      description: "Buy the best RO Water Purifier in Pune from SGSRO."
+      description: "Buy the best RO Water Purifier in Pune from SSS."
     };
   }
 }
