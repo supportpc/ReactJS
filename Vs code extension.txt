@@ -1,0 +1,20 @@
+Vs code extension 
+
+Auto close tag
+Auto complete tag
+Auto rename tag
+Code spell checker 
+Es7 react redux graphql
+Live server
+React native snippet 
+React native tool 
+Tailwind css intelliSense
+
+
+Google extension 
+Details seo 
+Enable right click all copy select 
+Mobile simulator 
+React developer tools
+Redux DevTools
+ColorZila

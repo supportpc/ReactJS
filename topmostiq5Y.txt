@@ -471,3 +471,81 @@ High
 Query optimization, data modeling, scalability and trade-offs.
 High
 
+
+
+
+
+
+
+---------------
+30 yeas
+1. System design and architecture
+These are some of the most important questions for senior architecture positions.
+1. How would you design a system to support 100 million users?
+2. How would you migrate a monolithic application to microservices without disrupting business operations?
+3. When would you choose a monolith over microservices?
+4. How would you design a highly available system across multiple regions?
+5. How would you handle millions of concurrent API requests?
+6. How do you identify architectural bottlenecks in a production system?
+7. How would you design a distributed caching strategy?
+8. How would you maintain consistency across multiple services and databases?
+9. How would you design an event-driven architecture?
+10. How do you make architectural decisions when performance, cost, security, and maintainability conflict?
+Example follow-up: Why would you choose a modular monolith instead of microservices for a growing business?
+
+A strong answer discusses team size, deployment independence, domain boundaries, operational complexity, failure isolation, and the actual need to scale components independently.
+2. Advanced JavaScript, React and Next.js
+11. How does the JavaScript event loop behave under heavy workloads?
+12. How would you diagnose memory leaks in a large React application?
+13. How do you design a reusable component architecture for multiple teams?
+14. How do React reconciliation and component identity affect rendering?
+15. How would you optimize a large React application with thousands of interactive components?
+16. How do you decide between client-side state, server state, and URL state?
+17. How would you architect a Next.js application with personalized content and SEO requirements?
+18. How do Server Components change the frontend architecture and security boundaries?
+19. How would you design caching and revalidation across the browser, CDN, Next.js server, and database?
+20. How would you migrate a large legacy React application to a modern Next.js architecture with minimal risk?
+3. Node.js and backend architecture
+21. How would you prevent CPU-intensive workloads from blocking a Node.js event loop?
+22. How would you design an API platform used by hundreds of internal and external teams?
+23. How would you implement distributed rate limiting?
+24. How would you handle retries, timeouts, circuit breakers, and partial failures?
+25. How would you make payment processing safe against duplicate requests and repeated webhooks?
+26. How would you design a reliable background job processing system?
+27. How do you handle graceful shutdown and zero-downtime deployments?
+28. How would you investigate increasing memory consumption in a production Node.js service?
+29. How do you manage API compatibility across multiple versions?
+30. How would you enforce authentication, authorization, auditing, and tenant isolation across hundreds of endpoints?
+4. Database and distributed systems
+31. How do you choose between relational databases, document databases, and distributed key-value stores?
+32. When is database sharding justified, and what problems does it introduce?
+33. How do you diagnose database contention and deadlocks at scale?
+34. How would you migrate a database containing billions of rows without prolonged downtime?
+35. Explain eventual consistency and when it is acceptable.
+36. How would you implement reliable communication between services without a distributed transaction?
+37. What is the transactional outbox pattern, and when would you use it?
+38. How would you design idempotent processing in a distributed system?
+39. How do you handle data reconciliation when two services disagree?
+40. How would you design disaster recovery with explicit recovery-time and recovery-point objectives?
+5. Security, reliability and performance
+41. How would you threat-model a full-stack application?
+42. How would you respond to a critical security vulnerability discovered in production?
+43. How do you design a zero-trust architecture?
+44. How do you protect sensitive data throughout its lifecycle?
+45. How would you investigate a sudden increase in production latency?
+46. How do you define and enforce service-level objectives (SLOs)?
+47. How would you design observability using logs, metrics, and distributed tracing?
+48. How do you conduct a blameless postmortem after a major outage?
+49. How would you reduce cloud infrastructure costs without compromising reliability?
+50. How do you test resilience against dependency failures and regional outages?
+6. Technical leadership and CTO-level questions
+51. How do you decide whether to build a solution internally or buy a third-party product?
+52. How do you resolve disagreements between senior engineers over architecture?
+53. How do you establish engineering standards across multiple teams?
+54. How do you balance technical debt against new business features?
+55. How do you evaluate whether a technology is mature enough for production?
+56. How do you mentor principal engineers and develop future technical leaders?
+57. How would you plan a three-year technology roadmap?
+58. How do you communicate architectural risks to nontechnical executives?
+59. How do you measure engineering productivity without relying on lines of code?
+60. Describe a major technical decision you made that failed. What did you learn?

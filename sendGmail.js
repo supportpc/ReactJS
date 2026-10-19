@@ -5,7 +5,6 @@ const sendGmail = nodemailer.createTransport({
   port: 587,
   secure: false,
   pool: true,
-
   auth: {
     user: process.env.GMAIL_ADDRESS,
     pass: process.env.GMAIL_PASSWORD,
