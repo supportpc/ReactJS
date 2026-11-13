@@ -1,0 +1,44 @@
+1.  const nextConfig: NextConfig = {
+output: 'standalone',
+// keep your other settings
+};
+
+
+
+
+Step 1: Check the config has standalone
+Select-String -Path next.config.ts -Pattern "standalone"
+
+Step 2: Open PowerShell as Administrator
+Remove-Item .next -Recurse -Force
+npm run build
+dir .next\standalone
+
+
+Step 4: Copy the extra folders
+xcopy .next\static .next\standalone\.next\static /E /I /Y
+xcopy public .next\standalone\public /E /I /Y
+xcopy private .next\standalone\private /E /I /Y
+
+Step 5: Add the Linux version of sharp
+
+# 5. Add Linux sharp (copy the lines below exactly; -ErrorAction SilentlyContinue stays on ONE line)
+
+$proj = (Get-Location).Path
+$v = (Get-Content node_modules\sharp\package.json | ConvertFrom-Json).version
+Remove-Item $env:TEMP\sharp-linux -Recurse -Force -ErrorAction SilentlyContinue
+mkdir $env:TEMP\sharp-linux
+cd $env:TEMP\sharp-linux
+npm init -y
+npm install --os=linux --cpu=x64 --libc=glibc sharp@$v
+xcopy node_modules\@img "$proj\.next\standalone\node_modules\@img" /E /I /Y
+cd $proj
+
+
+
+
+Step 6: Make the zip
+
+Remove-Item rasco.zip -ErrorAction SilentlyContinue
+tar -a -c -f rasco.zip -C .next\standalone .
+
